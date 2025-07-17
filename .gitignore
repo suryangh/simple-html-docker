@@ -1,0 +1,3 @@
+kubernetes/tls.crt
+kubernetes/tls.key
+# Ignore TLS certificate and key files in Kubernetes directory
