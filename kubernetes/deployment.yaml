@@ -1,0 +1,40 @@
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: simple-html-deployment
+    namespace: default
+    labels:
+      app: simple-html-app
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: simple-html-app
+    template:
+      metadata:
+        labels:
+          app: simple-html-app
+      spec:
+        containers:
+          - name: simple-html-container
+            image: syndana/simple:latest
+            imagePullPolicy: IfNotPresent
+            ports:
+              - containerPort: 80
+            volumeMounts:
+              - name: index-html-volume
+                mountPath: /usr/share/nginx/html/index.html
+                subPath: index.html
+                readOnly: true
+              - name: nginx-config-volume
+                mountPath: /etc/nginx/nginx.conf
+                subPath: nginx.conf
+                readOnly: true
+        volumes:
+          - name: index-html-volume
+            configMap:
+              name: index-html-config
+          - name: nginx-config-volume
+            configMap:
+              name: simple-html-nginx-config
+
