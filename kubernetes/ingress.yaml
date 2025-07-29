@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: syn.centralindia.cloudapp.azure.com
+    - host: nexus.synapp.my.id
       http:
         paths:
           - path: /
