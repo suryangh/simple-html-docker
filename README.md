@@ -1,6 +1,7 @@
 # Simple HTML Docker & Kubernetes Project
 
 Proyek ini adalah aplikasi web HTML sederhana yang di-containerize menggunakan Docker dan siap untuk deploy ke Kubernetes cluster.
+untuk hasil akhirnya bisa dicek di https://nexus.synapp.my.id/
 
 ## 📁 Struktur Project
 
